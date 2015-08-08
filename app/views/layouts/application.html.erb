@@ -3,12 +3,20 @@
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="header">
+  <%= render 'layouts/header' %>
+</div>
 
-<%= yield %>
-
+<div class="row">
+  <div class="large-9 columns" role="content">
+    <%= yield %>
+  </div>
+  <%= render 'layouts/aside' %>
+</div>
+<%= render 'layouts/footer' %>
 </body>
 </html>

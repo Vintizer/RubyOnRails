@@ -1,18 +1,19 @@
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+  <h3><%= @article.title %></h3>
 </p>
 
-<p>
-  <strong>Text:</strong>
+<p align="justify">
   <%= @article.text %>
 </p>
+<hr>
 
-<h2>Comments</h2>
+<h4>Comments</h4>
+<div id = 'comments'>
 <%= render @article.comments %>
-
-<h2>Add a comment:</h2>
+</div>
+<h4>Add a comment:</h4>
 <%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<ul class="inline-list right">
+    <li><%= link_to 'Edit', edit_article_path(@article) %></li>
+    <li><%= link_to 'Back', articles_path %></li>
+</ul>
